@@ -1,6 +1,14 @@
 <html>
     <head>
         <title>URL Shortener - @yield('title')</title>
+        @section('head')
+        <!-- Font Awesome for Icons -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <!-- JQuery Library -->
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+               integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+               crossorigin="anonymous">
+        </script>
         <style>
             /* Fixed sidenav, full height */
             .sidenav {
@@ -14,12 +22,10 @@
                 overflow-x: hidden;
                 padding-top: 20px;
             }
-
             /* sidenav links */
             .sidenav a {
                 padding: 6px 8px 6px 16px;
                 text-decoration: none;
-                font-size: 20px;
                 color: #818181;
                 display: block;
                 border: none;
@@ -34,20 +40,18 @@
             .sidenav a:hover {
                 color: #f1f1f1;
             }
-
             /* Main content */
             .main {
                 margin-left: 200px; /* Same as the width of the sidenav */
-                font-size: 20px; /* Increased text to enable scrolling */
                 padding: 0px 10px;
             }
         </style>
+        @show
     </head>
     <body>
         @section('sidebar')
             <div class="sidenav">
                 <a href="/">Home</a>
-                <a href="/r/analytics">Analytics</a>
             </div>
         @show
 

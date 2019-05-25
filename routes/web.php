@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.home');
-});
+Route::get('/', 'HomeController@home');
+
+// Route for redirecting from the shortened url to destination url.
+Route::get('/{slug}', 'HomeController@redirect');

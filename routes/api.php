@@ -13,6 +13,14 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group([
+    'prefix' => 'v1',
+    'namespace' => 'Api\V1',
+], function () {
+    Route::get('shortlink', 'ShortLinkController@index');
+    Route::get('shortlink/{slug}', 'ShortLinkController@find');
+    Route::post('shortlink', 'ShortLinkController@create');
+    Route::patch('shortlink/{slug}', 'ShortLinkController@update');
+    Route::delete('shortlink/{slug}', 'ShortLinkController@delete');
+    Route::get('generate-slug', 'ShortLinkController@generateSlug');
 });

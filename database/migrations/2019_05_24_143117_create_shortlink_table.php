@@ -13,8 +13,13 @@ class CreateShortlinkTable extends Migration
      */
     public function up()
     {
-        Schema::create('shortlink', function (Blueprint $table) {
+        Schema::create('shortlinks', function (Blueprint $table) {
             $table->bigIncrements('id');
+            // 8 Characters should generally be enough, but 20 gives user custom longer urls
+            $table->string('slug', 20)->unique()->index();
+            // 2048 is the max url limitation of characters
+            $table->string('destination', 2048);
+            $table->unsignedBigInteger('clicks')->default(0);
             $table->timestamps();
         });
     }
@@ -26,6 +31,6 @@ class CreateShortlinkTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shortlink');
+        Schema::dropIfExists('shortlinks');
     }
 }
