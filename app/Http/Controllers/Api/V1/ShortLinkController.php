@@ -61,6 +61,8 @@ class ShortLinkController extends Controller
             // allow max of 20 characters for custom short links
             'slug' => 'nullable|alpha_num|unique:shortlinks,slug|max:20',
             'destination' => 'required|url|max:2048',
+        ], [
+            'destination.url' => 'The :attribute format is invalid. Format must include http:// or https://'
         ]);
         // If there is no slug in the request, then generate one.
         if (empty($createRequest['slug'])) {

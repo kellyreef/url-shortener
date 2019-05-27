@@ -51,7 +51,7 @@
         <br/>
         <!-- input for shortened url -->
         <div class="form-group" id="slug-input">
-            <label for="slug" class="label">{{(app('url')->to('/'))}}/</label>
+            <label for="slug" class="label" id="slug-label"></label>
             <input type="text" class="form-control slug" id="slug" value="">
             <span class="error" id="slug-error"></span>
         </div>
@@ -64,7 +64,7 @@
         <br/>
         <!-- button controls for creating and resetting Form -->
         <div class="form-group controls">
-            <button class="btn far" id="ajaxSubmit">Submit</button>
+            <button class="btn far" id="create">Submit</button>
             <span class="success" id="create-success"></span>
             <button class="reset btn far" id="create-new">Reset</button>
         </div>
