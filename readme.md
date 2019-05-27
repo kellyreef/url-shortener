@@ -78,7 +78,7 @@ Run the laravel development server
 
 The api can now be accessed at
 
-    http://localhost:8000/api/v1/
+    http://127.0.0.1:8000/api/v1/
 
 Request headers
 
